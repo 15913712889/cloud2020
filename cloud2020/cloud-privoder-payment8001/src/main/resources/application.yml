@@ -1,0 +1,28 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  #配置在使用parametertype的值时，只写下面这个包下面的实体类名称就行，不用写全类名了
+  type-aliases-package: com.caixiaobai.springcloud.entities
+
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://localhost:7001/eureka  #单机版
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka  #集群版
+    #表示是否将自己注册进eureka,默认为true
+    register-with-eureka: true
+    #是否抓取已有的注册信息，默认为true。单节点无所谓，集群必须设置为true
+    fetch-registry: true
+  instance:
+    instance-id: payment8001  #主机名显示的修改，自定义主机名
+    prefer-ip-address: true   #访问路径可以显示ip地址
