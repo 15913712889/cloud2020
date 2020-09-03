@@ -22,6 +22,7 @@
       <module>cloud-privoder-hystrix-payment8011</module>
       <module>cloud-consumer-feign-hystrix-order7996</module>
       <module>cloud-consumer-hystrix-dashboard9001</module>
+      <module>cloud-gateway9527</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -34,7 +35,7 @@
     <lombok.version>1.18.10</lombok.version>
     <log4j.version>1.2.17</log4j.version>
     <mysql.version>8.0.19</mysql.version>
-    <druid.version>1.1.16</druid.version>
+    <druid.version>1.1.10</druid.version>
     <mybatis.spring.boot.version>2.1.1</mybatis.spring.boot.version>
   </properties>
 
@@ -77,12 +78,14 @@
         <version>${mysql.version}</version>
         <scope>runtime</scope>
       </dependency>
-      <!-- druid-->
+
+      <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
       <dependency>
         <groupId>com.alibaba</groupId>
-        <artifactId>druid</artifactId>
+        <artifactId>druid-spring-boot-starter</artifactId>
         <version>${druid.version}</version>
       </dependency>
+
 
       <!--mybatis-->
       <dependency>
