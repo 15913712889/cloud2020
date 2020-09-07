@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @时间：2020/09/07
  **/
 @RestController
-@RefreshScope //刷新注解
-public class ConfigCilentController {
+@RefreshScope
+public class ConfigClientController {
 
     @Value("${config.info}")
     private String configInfo;
