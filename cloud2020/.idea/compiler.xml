@@ -7,20 +7,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cloud-consumer-order80" />
-        <module name="cloud-consumer-feign-hystrix-order7996" />
+        <module name="cloud-privoder-payment8002" />
+        <module name="cloud-config-client3366" />
+        <module name="cloud-stream-rabbitmq-privoder8801" />
         <module name="cloud-eureka-server7001" />
         <module name="cloud-privoder-payment8004-zookeeper" />
-        <module name="cloud-consumer-hystrix-dashboard9001" />
-        <module name="cloud-consumer-order7999-zookeeper" />
-        <module name="cloud-privoder-payment8002" />
-        <module name="cloud-privoder-payment8001" />
-        <module name="cloud-privoder-hystrix-payment8011" />
         <module name="cloud-api-commons" />
+        <module name="cloud-privoder-payment8001" />
+        <module name="my-study-java8" />
+        <module name="cluod-config-client3355" />
+        <module name="cloud-consumer-feign-hystrix-order7996" />
+        <module name="cloud-consumer-hystrix-dashboard9001" />
+        <module name="cloud-gateway9527" />
+        <module name="cloud-stream-rabbitmq-provider8803" />
+        <module name="cloud-stream-rabbitmq-consumer8802" />
+        <module name="cloud-privoder-hystrix-payment8011" />
+        <module name="cloud-config-center-3344" />
+        <module name="cloud-consumer-order7999-zookeeper" />
         <module name="cloud-consumer-order7997-feign" />
+        <module name="cloud-consumer-order80" />
         <module name="cloud-euerka-server7002" />
-        <module name="cloud-privoder-payment8006-consul" />
         <module name="cloud-consumer-order7998-consul" />
+        <module name="cloud-privoder-payment8006-consul" />
       </profile>
     </annotationProcessing>
   </component>

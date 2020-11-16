@@ -21,6 +21,7 @@ public class MyLogGloBalFilter implements GlobalFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         log.info("=====come in MyLogGloBalFilter:"+new Date());
+
         //ServerWebExchange exchange   是spring5.0之后的东西，需要了解
         String uname = exchange.getRequest().getQueryParams().getFirst("uname");
         if(uname == null){
