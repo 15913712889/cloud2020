@@ -19,6 +19,7 @@ public class TestLambda {
        // List<User> userList = new ArrayList<User>();
 
         list.forEach(System.out::println);
+        list.forEach(x -> System.out.println("姓名："+x));
 
         Map<Integer,List> map = new HashMap<>();
         map.put(1,list);
