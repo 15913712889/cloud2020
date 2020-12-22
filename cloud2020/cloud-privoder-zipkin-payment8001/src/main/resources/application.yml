@@ -5,7 +5,7 @@ spring:
   application:
     name: cloud-privoder-zipkin-payment8001
   zipkin:
-    base-url: http://localhost:9941
+    base-url: http://localhost:9411  #地址不要写错
   sleuth:
     sampler:
       probability: 1
