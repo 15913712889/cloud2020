@@ -29,6 +29,7 @@
       <module>cloud-stream-rabbitmq-privoder8801</module>
     <module>cloud-stream-rabbitmq-consumer8802</module>
       <module>cloud-stream-rabbitmq-provider8803</module>
+    <module>cloudAlibaba-privoder-payment9001</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -47,11 +48,21 @@
 
   <dependencyManagement>
     <dependencies>
+      <!--nacos注册中心-->
       <dependency>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.0.0</version>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        <version>0.2.2.RELEASE</version>
       </dependency>
+      <!--nacos配置中心-->
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        <version>0.2.2.RELEASE</version>
+      </dependency>
+
+
+
       <!--spring boot 2.2.2-->
       <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -70,13 +81,15 @@
       </dependency>
 
       <!--spring cloud 阿里巴巴-->
-      <dependency>
-        <groupId>com.alibaba.cloud</groupId>
-        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-        <version>2.1.0.RELEASE</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+
+        <dependency>
+          <groupId>com.alibaba.cloud</groupId>
+          <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+          <version>2.1.1.BUILD-SNAPSHOT</version>
+          <type>pom</type>
+          <scope>import</scope>
+        </dependency>
+
       <!--mysql-->
       <dependency>
         <groupId>mysql</groupId>
@@ -115,9 +128,21 @@
   </dependencyManagement>
 
   <!--添加这个是为了支持热部署-->
+<!--  <build>-->
+<!--    &lt;!&ndash;父工程名&ndash;&gt;-->
+<!--    <finalName>cloud2020</finalName>-->
+<!--    <plugins>-->
+<!--      <plugin>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--        <configuration>-->
+<!--          <fork>true</fork>-->
+<!--          <addResources>true</addResources>-->
+<!--        </configuration>-->
+<!--      </plugin>-->
+<!--    </plugins>-->
+<!--  </build>-->
   <build>
-    <!--父工程名-->
-    <finalName>cloud2020</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
