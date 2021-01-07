@@ -18,19 +18,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope//支持动态刷新获取到的配置，配置文件中必须要开启动态刷新
 public class NacosConfigController {
 
-    @Value("${user.age}")//这个支持动态刷新
-    private Integer userAge;
+//    @Value("${user.age}")//这个支持动态刷新
+//    private Integer userAge;
+//
+//    @Value("${config.environment}")
+//    private String environment;
+//
+//    @RequestMapping("/get/value")
+//    public String demo01(){
+//        return "年龄为："+userAge;
+//    }
+//
+//    @RequestMapping("/get/environment")
+//    public String demo02(){
+//        return "当前项目环境为："+environment;
+//    }
+    @Value("${config.info}")
+    private String info;
 
-    @NacosValue("${user.age}")//这个无法获取值
-    private Integer NacosUserAge;
-
-    @RequestMapping("/get/value")
-    public String demo01(){
-        return "年龄为："+userAge;
-    }
-
-    @RequestMapping("/get/nacosvalue")
-    public String demo02(){
-        return "年龄为："+NacosUserAge;
+    @RequestMapping("/get/info")
+    public String demo03(){
+        return info;
     }
 }
