@@ -3,6 +3,7 @@ package com.caixiaobai.springcloud;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
@@ -14,6 +15,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  * to change this template use file | settings| Editor | file and code Templates | includes | file header .
  */
 @SpringBootApplication
+@EnableDiscoveryClient//服务发现
 @Slf4j
 public class NacosConfigClient3377 {
 
