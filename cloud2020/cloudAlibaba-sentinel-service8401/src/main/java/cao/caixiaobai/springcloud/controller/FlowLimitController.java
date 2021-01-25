@@ -44,7 +44,10 @@ public class FlowLimitController {
     }
 
 
-
+    /**
+     * 返回外部异常类
+     *
+     * */
     @RequestMapping("/testHotKey")
     @SentinelResource(value = "testHotKey",blockHandler ="HotKeyET",blockHandlerClass = HotKeyException.class)
     public String hotKey(@RequestParam(value = "a",required = false)String a,
