@@ -12,6 +12,14 @@
     <artifactId>cloudAlibaba-sentinel-service8401</artifactId>
 
     <dependencies>
+        <!--sentinel 热点key使用-->
+        <!-- https://mvnrepository.com/artifact/com.alibaba.csp/sentinel-parameter-flow-control -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-parameter-flow-control</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
