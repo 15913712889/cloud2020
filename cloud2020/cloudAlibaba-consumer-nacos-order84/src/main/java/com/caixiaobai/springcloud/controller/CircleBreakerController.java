@@ -30,7 +30,9 @@ public class CircleBreakerController {
 
     @RequestMapping(value = "/consumer/fallback/{id}")
     //@SentinelResource(value = "fallBack")//这个配置直接返回错误页面，给用户不友好的体验
-    @SentinelResource(value = "fallBack",fallback = "demo01",fallbackClass = MySentinelFallBack.class)
+    @SentinelResource(value = "fallBack",fallback = "demo01",
+            fallbackClass = MySentinelFallBack.class
+            ,exceptionsToIgnore = {IllegalArgumentException.class})//这个属性是排除某个异常不处理
     public CommonResult<Payment> demo01(@PathVariable Long id){
         CommonResult<Payment> result = restTemplate.getForObject(SERVICE_URL+"/paymentSQL/"+id,CommonResult.class,id);
         if(id==4){
