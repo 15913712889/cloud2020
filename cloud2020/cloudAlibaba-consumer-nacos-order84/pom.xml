@@ -13,10 +13,6 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
 
         <!--这个很必要，不然sentinel监控平台无法显示我们的服务-->
         <dependency>
