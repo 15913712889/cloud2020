@@ -33,6 +33,11 @@ public class PaymentController {
     @RequestMapping(value = "/paymentSQL/{id}")
     public CommonResult<Payment> dome(@PathVariable("id")Long id){
         Payment payment = hm.get(id);
+
+                if (id >= 4) {
+                    Integer a = 10 / 0;
+                }
+
         return new CommonResult<>(200,"操作成功!端口号："+serverPort,payment);
     }
 
