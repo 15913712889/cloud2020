@@ -19,4 +19,6 @@ public class PaymentFallBackService implements PaymentService1{
     public CommonResult<Payment> paymentSQL(Long id) {
         return new CommonResult<>(404,"服务器繁忙！",new Payment(id,"errors"));
     }
+
+
 }
