@@ -16,13 +16,17 @@ import org.apache.ibatis.annotations.Update;
  */
 @Mapper
 public interface OrderMapper {
+
     @Insert("<script>" +
-            "insert into t_order(user_id,product_id,count,money,status) values (#{order.userId},#{order.productId},#{order.count},#{order.money},0)" +
+            "insert into t_order(user_id,product_id,count,money,status) " +
+            "values (#{order.userId},#{order.productId},#{order.count},#{order.money},0) " +
             "</script>")
-    void create(Order order);
+    void create(@Param("order") Order order);
 
     @Update("<script>" +
-            "update t_order set status =1 where user_id =#{userId} and status=#{status}" +
+            "update t_order " +
+            "set status =1 " +
+            "where user_id =#{userId} and status=#{status} " +
             "</script>")
     void update(@Param("userId") Long userId,@Param("status")Integer status);
 }

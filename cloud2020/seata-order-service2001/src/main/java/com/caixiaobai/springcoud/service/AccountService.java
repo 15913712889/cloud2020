@@ -15,10 +15,10 @@ import java.math.BigDecimal;
  * describe(描述):
  * to change this template use file | settings| Editor | file and code Templates | includes | file header .
  */
-@FeignClient(value = "seata-account-service")
+@FeignClient(value = "seata-account-service2003")
 public interface AccountService {
 
-    @PostMapping(value = "account/decrease")
+    @PostMapping(value = "/account/decrease")
     CommonResult decrease(@RequestParam("userId") Long userId,
                           @RequestParam("money") BigDecimal money);
 

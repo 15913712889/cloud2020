@@ -2,8 +2,8 @@ package com.caixiaobai.springcoud.service;
 
 import com.caixiaobai.springcoud.result.CommonResult;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * created with Intellij IDEA
@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
  * describe(描述):
  * to change this template use file | settings| Editor | file and code Templates | includes | file header .
  */
-@FeignClient(value = "seata-storage-service")
+@FeignClient(name = "seata-storage-service2002")
 public interface StorageService {
-    @PostMapping("storage/decrease")
+
+    @RequestMapping(value = "/storage/decrease")
     CommonResult decrease(@RequestParam("productId") Long productId,
                           @RequestParam("count") Integer count);
 }
