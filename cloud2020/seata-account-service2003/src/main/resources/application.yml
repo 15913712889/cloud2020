@@ -19,7 +19,10 @@ logging:
     io:
       seata: info
 
-
+mybatis:
+  configuration:
+    #开启日志打印
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 #====================================Seata Config===============================================
 seata:
@@ -49,7 +52,7 @@ seata:
         datasource-autoproxy: true
   service:
     vgroup-mapping:
-      my_test_tx_group: default # TC 集群（必须与seata-server保持一致）
+      my_test_tx_group: SEATA_GROUP # TC 集群（必须与seata-server保持一致）
     enable-degrade: false # 降级开关
     disable-global-transaction: false # 禁用全局事务（默认false）
     grouplist:

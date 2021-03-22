@@ -5,6 +5,7 @@ import com.caixiaobai.springcloud.service.AccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 
@@ -24,6 +25,7 @@ public class AccountServiceImpl implements AccountService {
     private AccountDao accountDao;
 
     @Override
+    //@Transactional(rollbackFor = Exception.class)
     public void decrease(Long userId, BigDecimal money) {
         log.info("------->account service 中扣减账户余额开始");
         accountDao.decrease(userId, money);
